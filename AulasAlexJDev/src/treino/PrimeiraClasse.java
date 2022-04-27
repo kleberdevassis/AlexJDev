@@ -16,7 +16,6 @@ public class PrimeiraClasse {
 		String nomePai = JOptionPane.showInputDialog(null, "digite o nome do pai");
 		String nomeMae = JOptionPane.showInputDialog(null, "digite o nome da mãe");
 		String nomeEscola = JOptionPane.showInputDialog(null, "digite o nome da escola");
-		
 
 		Aluno aluno1 = new Aluno();
 
@@ -29,16 +28,32 @@ public class PrimeiraClasse {
 		aluno1.setNomeEscola(nomeEscola);
 
 		for (int pos = 1; pos <= 4; pos++) {
-			String nomeDisciplina = JOptionPane.showInputDialog
-					(null,"nome da disciplina"+pos+"?");
-			String notaDisciplina = JOptionPane.showInputDialog
-					(null,"nota da disciplina"+pos+"?");
-			
+			String nomeDisciplina = JOptionPane.showInputDialog(null, "nome da disciplina" + pos + "?");
+			String notaDisciplina = JOptionPane.showInputDialog(null, "nota da disciplina" + pos + "?");
+
 			Disciplina disciplina = new Disciplina();
 			disciplina.setDisciplina(nomeDisciplina);
 			disciplina.setNota(Double.valueOf(notaDisciplina));
-			
+
 			aluno1.getDisciplinas().add(disciplina);
+
+		}
+		
+		int escolha = JOptionPane.showConfirmDialog(null, "voce deseja remover a disciplina?");
+		
+		
+		
+		if(escolha == 0) {
+			int continuarRemover = 0;
+			int posicao = 1;
+			while(continuarRemover ==0) {
+				String disciplinaRemover = JOptionPane.showInputDialog("qual é a disciplina? 1 2 3 ou 4 ?");
+				aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao); 
+				posicao++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
+			}
+			
+			
 			
 		}
 
@@ -46,16 +61,7 @@ public class PrimeiraClasse {
 		System.out.println("media nota->" + aluno1.getMediaNota());
 		System.out.println("resultado ->" + aluno1.getAlunoAprovado2());
 
-//		Aluno aluno1 = new Aluno();
-//		aluno1.setNome("kleber");
-//		Aluno aluno2 = new Aluno();
-//		aluno2.setNome("kleber");
-//		
-//		if(aluno1.equals(aluno2)) {
-//			System.out.println("iguais");
-//		}else {
-//			System.out.println("diferentes");
-//		}
+
 
 	}
 
