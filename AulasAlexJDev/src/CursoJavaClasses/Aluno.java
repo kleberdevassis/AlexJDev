@@ -24,15 +24,15 @@ public class Aluno {
 	private String DataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
-	private Disciplina disciplina = new Disciplina();
-	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+
+	List<Disciplina> disciplinas = new ArrayList<>();
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
-	
-	public Disciplina getDisciplina() {
-		return disciplina;
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
 	public String getNome() {
@@ -116,8 +116,13 @@ public class Aluno {
 	}
 
 	public double getMediaNota() {
-		return (disciplina.getNota1() + disciplina.getNota2()
-		+ disciplina.getNota3() + disciplina.getNota4()) / 4;
+		double somaNotas = 0.0;
+
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+
+		return somaNotas / disciplinas.size();
 	}
 
 	public boolean Resultado() {
@@ -137,15 +142,13 @@ public class Aluno {
 			return "aluno reprovado";
 		}
 	}
-	
-	
 
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", DataMatricula=" + DataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+				+ serieMatriculado + "]";
 	}
 
 	@Override
