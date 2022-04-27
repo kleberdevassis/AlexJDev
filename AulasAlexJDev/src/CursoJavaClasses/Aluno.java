@@ -137,6 +137,16 @@ public class Aluno {
 			return "aluno reprovado";
 		}
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", DataMatricula=" + DataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+	}
 
 	@Override
 	public int hashCode() {
