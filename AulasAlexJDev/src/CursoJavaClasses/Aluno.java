@@ -21,9 +21,9 @@ public class Aluno {
 	private String numeroCpf;
 	private String nomeMae;
 	private String nomePai;
-	private String DataMatricula;
+	//private String DataMatricula;
 	private String nomeEscola;
-	private String serieMatriculado;
+	//private String serieMatriculado;
 
 	List<Disciplina> disciplinas = new ArrayList<>();
 
@@ -91,13 +91,13 @@ public class Aluno {
 		this.nomePai = nomePai;
 	}
 
-	public String getDataMatricula() {
+	/*public String getDataMatricula() {
 		return DataMatricula;
 	}
 
 	public void setDataMatricula(String dataMatricula) {
 		DataMatricula = dataMatricula;
-	}
+	}*/
 
 	public String getNomeEscola() {
 		return nomeEscola;
@@ -107,13 +107,13 @@ public class Aluno {
 		this.nomeEscola = nomeEscola;
 	}
 
-	public String getSerieMatriculado() {
+	/*public String getSerieMatriculado() {
 		return serieMatriculado;
 	}
 
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
-	}
+	}*/
 
 	public double getMediaNota() {
 		double somaNotas = 0.0;
@@ -152,8 +152,8 @@ public class Aluno {
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", DataMatricula=" + DataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+				+ ", DataMatricula=" +  ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+  "]";
 	}
 
 	@Override

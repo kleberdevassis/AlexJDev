@@ -1,5 +1,8 @@
 package treino;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import CursoJavaClasses.Aluno;
@@ -9,7 +12,13 @@ public class PrimeiraClasse {
 
 	public static void main(String[] args) {
 
-		String nome = JOptionPane.showInputDialog(null, "digite o nome do aluno");
+		List<Aluno> alunos = new ArrayList<>();
+		
+		for (int qtd = 1; qtd <= 2; qtd++) {
+			
+		
+		
+		String nome = JOptionPane.showInputDialog(null, "digite o nome do aluno"+qtd+"?");
 		String nascimento = JOptionPane.showInputDialog(null, "digite o nascimento");
 		String rg = JOptionPane.showInputDialog(null, "digite o rg");
 		String cpf = JOptionPane.showInputDialog(null, "digite o cpf");
@@ -56,11 +65,18 @@ public class PrimeiraClasse {
 			
 			
 		}
+		
+		alunos.add(aluno1);
+		}
 
-		System.out.println(aluno1.toString());
-		System.out.println("media nota->" + aluno1.getMediaNota());
-		System.out.println("resultado ->" + aluno1.getAlunoAprovado2());
-
+		for (Aluno aluno : alunos) {
+			System.out.println(aluno);
+			System.out.println("media nota->" + aluno.getMediaNota());
+			System.out.println("resultado ->" + aluno.getAlunoAprovado2());
+            System.out.println("-----------------------------");
+		}
+		
+		
 
 
 	}
