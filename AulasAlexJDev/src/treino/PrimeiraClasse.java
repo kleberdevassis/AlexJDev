@@ -69,14 +69,21 @@ public class PrimeiraClasse {
 		alunos.add(aluno1);
 		}
 
-		for (Aluno aluno : alunos) {
-			System.out.println(aluno);
-			System.out.println("media nota->" + aluno.getMediaNota());
-			System.out.println("resultado ->" + aluno.getAlunoAprovado2());
-            System.out.println("-----------------------------");
+		for (int pos = 0; pos < alunos.size(); pos++) {
+			
+			Aluno aluno = alunos.get(pos);
+			
+			System.out.println("Aluno -> "+ aluno.getNome());
+			System.out.println("media-> " +aluno.getMediaNota());
+			System.out.println("Resultado-> " + aluno.getAlunoAprovado2());
+			System.out.println("---------------------------------------------");
+			for (int posd = 0; posd < aluno.getDisciplinas().size(); posd++) {
+				
+				Disciplina disc = aluno.getDisciplinas().get(posd);
+				System.out.println("disciplinas -> "+ disc.getDisciplina()+ " notas-> "+disc.getNota());
+			}
+			
 		}
-		
-		
 
 
 	}
