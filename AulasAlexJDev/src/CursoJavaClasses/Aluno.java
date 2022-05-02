@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import CursoJava.constantes.StatusAluno;
+
 public class Aluno {
 
 	public Aluno() {
@@ -139,12 +141,12 @@ public class Aluno {
 		
 		if(media >= 50) {
 			if(media >= 70) {
-				return"Aluno esta aprovado";
+				return StatusAluno.APROVADO;
 			}else {
-				return "Aluno em recuperação";
+				return StatusAluno.RECUPERACAO;
 			}
 		}else {
-			return "Aluno em recuperação";
+			return StatusAluno.RECUPERACAO;
 		}
 	}
 
