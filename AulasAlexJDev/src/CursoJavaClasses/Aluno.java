@@ -146,7 +146,7 @@ public class Aluno {
 				return StatusAluno.RECUPERACAO;
 			}
 		}else {
-			return StatusAluno.RECUPERACAO;
+			return StatusAluno.REPROVADO;
 		}
 	}
 

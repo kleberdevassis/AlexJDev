@@ -13,6 +13,13 @@ import CursoJavaClasses.Disciplina;
 public class PrimeiraClasse {
 
 	public static void main(String[] args) {
+		
+		
+		String login = JOptionPane.showInputDialog("informe o login");
+		String senha = JOptionPane.showInputDialog("Digite a senha");
+		
+		if(login.equalsIgnoreCase("adm") && senha.equalsIgnoreCase("adm")) {
+		
 
 		List<Aluno> alunos = new ArrayList<>();
 		
@@ -25,22 +32,22 @@ public class PrimeiraClasse {
 		for (int qtd = 1; qtd <= 5; qtd++) {
 
 			String nome = JOptionPane.showInputDialog(null, "digite o nome do aluno" + qtd + "?");
-			String nascimento = JOptionPane.showInputDialog(null, "digite o nascimento");
+			/*String nascimento = JOptionPane.showInputDialog(null, "digite o nascimento");
 			String rg = JOptionPane.showInputDialog(null, "digite o rg");
 			String cpf = JOptionPane.showInputDialog(null, "digite o cpf");
 			String nomePai = JOptionPane.showInputDialog(null, "digite o nome do pai");
 			String nomeMae = JOptionPane.showInputDialog(null, "digite o nome da mãe");
-			String nomeEscola = JOptionPane.showInputDialog(null, "digite o nome da escola");
+			String nomeEscola = JOptionPane.showInputDialog(null, "digite o nome da escola");*/
 
 			Aluno aluno1 = new Aluno();
 
 			aluno1.setNome(nome);
-			aluno1.setDataNascimento(nascimento);
+			/*aluno1.setDataNascimento(nascimento);
 			aluno1.setRegistroGeral(rg);
 			aluno1.setNumeroCpf(cpf);
 			aluno1.setNomePai(nomePai);
 			aluno1.setNomeMae(nomeMae);
-			aluno1.setNomeEscola(nomeEscola);
+			aluno1.setNomeEscola(nomeEscola);*/
 
 			for (int pos = 1; pos <= 1; pos++) {
 				String nomeDisciplina = JOptionPane.showInputDialog(null, "nome da disciplina" + pos + "?");
@@ -89,15 +96,17 @@ public class PrimeiraClasse {
 
 		System.out.println(" lista dos aprovados ---------------------------------------------------------------");
 		for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
-			System.out.println("Resultado -> " + aluno.getAlunoAprovado2() + "com media de " + aluno.getMediaNota());
+			System.out.println("Resultado -> " + aluno.getAlunoAprovado2() + " com media de " + aluno.getMediaNota());
 		}
-		System.out.println(" lista dos aprovados ---------------------------------------------------------------");
+		System.out.println(" lista em recuperação ---------------------------------------------------------------");
 		for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
-			System.out.println("Resultado -> " + aluno.getAlunoAprovado2() + "com media de " + aluno.getMediaNota());
+			System.out.println("Resultado -> " + aluno.getAlunoAprovado2() + " com media de " + aluno.getMediaNota());
 		}
-		System.out.println(" lista dos aprovados ---------------------------------------------------------------");
+		System.out.println(" lista dos reprovados ---------------------------------------------------------------");
 		for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 			System.out.println("Resultado -> " + aluno.getAlunoAprovado2() + "com media de " + aluno.getMediaNota());
+		}
+		
 		}
 
 	}
