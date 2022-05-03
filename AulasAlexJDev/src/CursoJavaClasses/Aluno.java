@@ -6,7 +6,7 @@ import java.util.Objects;
 
 import CursoJava.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa{
 
 	public Aluno() {
 
@@ -16,17 +16,10 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
-	//private String DataMatricula;
+	
+	private String DataMatricula;
 	private String nomeEscola;
-	//private String serieMatriculado;
-
+	private String serieMatriculado;
 	List<Disciplina> disciplinas = new ArrayList<>();
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {
@@ -173,6 +166,21 @@ public class Aluno {
 			return false;
 		Aluno other = (Aluno) obj;
 		return Objects.equals(nome, other.nome);
+	}
+	
+	@Override   // identifica método sobreescrito
+	public boolean pessoaMaiorIdade() {
+		return idade >= 21;
+	}
+	
+	public String msMaiorIdade() {
+		return this.pessoaMaiorIdade()? "Maior de idade":"menor de idade";
+	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1500;
 	}
 
 }
