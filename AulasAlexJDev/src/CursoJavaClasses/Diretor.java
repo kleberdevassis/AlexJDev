@@ -1,29 +1,49 @@
 package CursoJavaClasses;
 
-public class Diretor extends Pessoa{
+import CursoJava.interfaces.PermitirAcesso;
 
-	
+public class Diretor extends Pessoa implements PermitirAcesso {
+
+	private String login;
+	private String senha;
+
+	public Diretor() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Diretor(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
+
 	private String registroEducacao;
 	private int tempoDirecao;
 	private String titulacao;
+
 	public String getRegistroEducacao() {
 		return registroEducacao;
 	}
+
 	public void setRegistroEducacao(String registroEducacao) {
 		this.registroEducacao = registroEducacao;
 	}
+
 	public int getTempoDirecao() {
 		return tempoDirecao;
 	}
+
 	public void setTempoDirecao(int tempoDirecao) {
 		this.tempoDirecao = tempoDirecao;
 	}
+
 	public String getTitulacao() {
 		return titulacao;
 	}
+
 	public void setTitulacao(String titulacao) {
 		this.titulacao = titulacao;
 	}
+
 	@Override
 	public String toString() {
 		return "Diretor [registroEducacao=" + registroEducacao + ", tempoDirecao=" + tempoDirecao + ", titulacao="
@@ -31,12 +51,24 @@ public class Diretor extends Pessoa{
 				+ ", registroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae
 				+ ", nomePai=" + nomePai + "]";
 	}
+
 	@Override
 	public double salario() {
 		// TODO Auto-generated method stub
 		return 3900.78;
 	}
-	
-	
-	
+
+	@Override
+	public boolean Autenticar(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+		return Autenticar();
+	}
+
+	@Override
+	public boolean Autenticar() {
+
+		return login.equals("kleber") && senha.equals("Kleber01@");
+	}
+
 }

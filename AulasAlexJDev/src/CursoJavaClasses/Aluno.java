@@ -6,7 +6,7 @@ import java.util.Objects;
 
 import CursoJava.constantes.StatusAluno;
 
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa {
 
 	public Aluno() {
 
@@ -16,7 +16,6 @@ public class Aluno extends Pessoa{
 		this.nome = nome;
 	}
 
-	
 	private String DataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
@@ -86,13 +85,12 @@ public class Aluno extends Pessoa{
 		this.nomePai = nomePai;
 	}
 
-	/*public String getDataMatricula() {
-		return DataMatricula;
-	}
-
-	public void setDataMatricula(String dataMatricula) {
-		DataMatricula = dataMatricula;
-	}*/
+	/*
+	 * public String getDataMatricula() { return DataMatricula; }
+	 * 
+	 * public void setDataMatricula(String dataMatricula) { DataMatricula =
+	 * dataMatricula; }
+	 */
 
 	public String getNomeEscola() {
 		return nomeEscola;
@@ -102,13 +100,12 @@ public class Aluno extends Pessoa{
 		this.nomeEscola = nomeEscola;
 	}
 
-	/*public String getSerieMatriculado() {
-		return serieMatriculado;
-	}
-
-	public void setSerieMatriculado(String serieMatriculado) {
-		this.serieMatriculado = serieMatriculado;
-	}*/
+	/*
+	 * public String getSerieMatriculado() { return serieMatriculado; }
+	 * 
+	 * public void setSerieMatriculado(String serieMatriculado) {
+	 * this.serieMatriculado = serieMatriculado; }
+	 */
 
 	public double getMediaNota() {
 		double somaNotas = 0.0;
@@ -131,14 +128,14 @@ public class Aluno extends Pessoa{
 
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		
-		if(media >= 50) {
-			if(media >= 70) {
+
+		if (media >= 50) {
+			if (media >= 70) {
 				return StatusAluno.APROVADO;
-			}else {
+			} else {
 				return StatusAluno.RECUPERACAO;
 			}
-		}else {
+		} else {
 			return StatusAluno.REPROVADO;
 		}
 	}
@@ -147,8 +144,7 @@ public class Aluno extends Pessoa{
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", DataMatricula=" +  ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+  "]";
+				+ ", DataMatricula=" + ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + "]";
 	}
 
 	@Override
@@ -167,14 +163,14 @@ public class Aluno extends Pessoa{
 		Aluno other = (Aluno) obj;
 		return Objects.equals(nome, other.nome);
 	}
-	
-	@Override   // identifica método sobreescrito
+
+	@Override // identifica método sobreescrito
 	public boolean pessoaMaiorIdade() {
 		return idade >= 21;
 	}
-	
+
 	public String msMaiorIdade() {
-		return this.pessoaMaiorIdade()? "Maior de idade":"menor de idade";
+		return this.pessoaMaiorIdade() ? "Maior de idade" : "menor de idade";
 	}
 
 	@Override
