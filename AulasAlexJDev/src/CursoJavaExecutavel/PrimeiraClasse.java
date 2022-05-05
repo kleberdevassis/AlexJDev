@@ -16,25 +16,27 @@ import CursoJavaClasses.Auxiliares.FuncaoAutenticacao;
 
 public class PrimeiraClasse {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { try {
 
 		String login = JOptionPane.showInputDialog("informe o login");
 		String senha = JOptionPane.showInputDialog("Digite a senha");
 
 		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { // se true acessa se false não acessa
 
-			List<Aluno> alunos = new ArrayList<>();
+			List<Aluno> alunos =new ArrayList<>();
 
 			HashMap<String, List<Aluno>> maps = new HashMap<>();
 
-			for (int qtd = 1; qtd <= 5; qtd++) {
+			for (int qtd = 1; qtd <= 2; qtd++) {
 
 				String nome = JOptionPane.showInputDialog(null, "digite o nome do aluno" + qtd + "?");
-
+				String idade = JOptionPane.showInputDialog(null, "digite a  idade");
+				
 				Aluno aluno1 = new Aluno();
-
+       /////////////////////// CONTINUAR A AULA DAQUI ///////////////////////////////////////////
 				aluno1.setNome(nome);
-
+				aluno1.setIdade(Integer.valueOf(idade));
+       //////////////////////////////////////////////////////////////////////////////////////////
 				for (int pos = 1; pos <= 1; pos++) {
 					String nomeDisciplina = JOptionPane.showInputDialog(null, "nome da disciplina" + pos + "?");
 					String notaDisciplina = JOptionPane.showInputDialog(null, "nota da disciplina" + pos + "?");
@@ -52,7 +54,7 @@ public class PrimeiraClasse {
 				if (escolha == 0) {
 					int continuarRemover = 0;
 					int posicao = 1;
-					while (continuarRemover == 0) {
+					while (continuarRemover == 0) {	
 						String disciplinaRemover = JOptionPane.showInputDialog("qual é a disciplina? 1 2 3 ou 4 ?");
 						aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
 						posicao++;
@@ -60,7 +62,7 @@ public class PrimeiraClasse {
 					}
 
 				}
-
+			
 				alunos.add(aluno1);
 			}
 
@@ -97,7 +99,23 @@ public class PrimeiraClasse {
 		} else {
 			JOptionPane.showMessageDialog(null, "acesso não permitido");
 		}
-
-	}
+		
+		//aqui
+	       }catch (Exception e) {
+	    	   StringBuilder saida = new StringBuilder();
+	    	   
+			e.printStackTrace(); // imprime o erro no console java
+			
+			for (int pos = 0; pos < e.getStackTrace().length; pos++) {
+				
+				saida.append("/n Classe de erro-> "+ e.getStackTrace()[pos].getClassName());
+				saida.append("/n Metodo do erro-> "+ e.getStackTrace()[pos].getMethodName());
+				saida.append("/n Linha do erro-> "+ e.getStackTrace()[pos].getLineNumber());
+				saida.append("/n Linha do erro-> "+ e.getClass().getName());
+			}
+			
+		JOptionPane.showMessageDialog(null, "erro ao processar notas"+saida.toString());
+			}
+}
 
 }
