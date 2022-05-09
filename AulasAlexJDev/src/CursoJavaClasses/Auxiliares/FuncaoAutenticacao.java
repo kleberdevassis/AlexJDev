@@ -8,7 +8,7 @@ public class FuncaoAutenticacao {
 	
 	
 	public boolean autenticar() {
-		return permitirAcesso.Autenticar();
+       return permitirAcesso.Autenticar();
 	}
 	
 	public FuncaoAutenticacao(PermitirAcesso acesso) {
