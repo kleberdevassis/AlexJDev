@@ -28,20 +28,45 @@ public class ArrayVetor {
 	    aluno.getDisciplinas().add(disciplina);
 	    aluno.getDisciplinas().add(disciplina2);
 	    
+	    Aluno aluno2 = new Aluno();
+		aluno2.setNome("kleber margarido");
+		aluno2.setNomeEscola("coder");
+		
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("curso de java");
+	    disciplina3.setNota(notas);
+	    
+	    Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("logica");
+	    disciplina4.setNota(notasLogica);
+		
+	    aluno2.getDisciplinas().add(disciplina3);
+	    aluno2.getDisciplinas().add(disciplina4);
 	    
 	    
-	    System.out.println("nome do aluno = "+ aluno.getNome()+ " inscrito no curso -> "+aluno.getNomeEscola());
-	    System.out.println("\ndisciplinas do aluno");
-	    for(Disciplina d : aluno.getDisciplinas()) {
-	    	System.out.println("\nDisciplina -> "+ d.getDisciplina());
-	    	System.out.println("Notas  ");
-	    for (int pos = 0; pos < d.getNota().length; pos++) {
-	    	System.out.println("Nota ->"+ (pos+1) + "é igual ->"+d.getNota()[pos] );
+	    
+	  ///-------------------------------------------------------------------------------------------------------------------
+	    
+	   Aluno[] arrayAlunos = new Aluno[2];
+	   arrayAlunos[0] = aluno;
+	   arrayAlunos[1] = aluno2;
+	   
+	   for (int pos = 0; pos < arrayAlunos.length; pos++) {
+		System.out.println("nome do aluno -> "+ arrayAlunos[pos].getNome());
+		for(Disciplina d: arrayAlunos[pos].getDisciplinas()) {
+			System.out.println("disciplina -> "+ d.getDisciplina());
+			for (int posnota = 0; posnota < d.getNota().length; posnota++) {
+				System.out.println("nota numero "+ (posnota+1)+ " é " + d.getNota()[posnota]);
+			}
 			
 		}
-	    }
+		
+	}
+		
+		
+	}
 	    
 	    
 	}
 
-}
+
