@@ -41,6 +41,10 @@ public class Disciplina {
 
 	
 
+	
+
+	
+
 	public double[] getNota() {
 		return nota;
 	}

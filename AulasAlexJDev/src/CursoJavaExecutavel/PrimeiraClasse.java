@@ -47,11 +47,11 @@ public class PrimeiraClasse {
 
 					for (int pos = 1; pos <= 1; pos++) {
 						String nomeDisciplina = JOptionPane.showInputDialog(null, "nome da disciplina" + pos + "?");
-						String notaDisciplina = JOptionPane.showInputDialog(null, "nota da disciplina" + pos + "?");
+						double notaDisciplina = Double.parseDouble(JOptionPane.showInputDialog("nota da disciplina"));
 
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina(nomeDisciplina);
-						//disciplina.setNota(Double.valueOf(notaDisciplina));
+						disciplina.setNota(notaDisciplina);
 
 						aluno1.getDisciplinas().add(disciplina);
 
